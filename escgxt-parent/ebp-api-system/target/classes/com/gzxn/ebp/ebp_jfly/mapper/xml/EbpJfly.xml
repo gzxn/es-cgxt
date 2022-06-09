@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_jfly.mapper.EbpJflyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_jfly.entity.EbpJfly">
+        <result column="crer" property="crer"/>
+        <result column="crtm" property="crtm"/>
+        <result column="mder" property="mder"/>
+        <result column="mdtm" property="mdtm"/>
+        <result column="id" property="id"/>
+        <result column="ysmc" property="ysmc"/>
+        <result column="ysbm" property="ysbm"/>
+        <result column="year" property="year"/>
+        <result column="jbbm" property="jbbm"/>
+        <result column="jbbmbm" property="jbbmbm"/>
+        <result column="jf_type" property="jfType"/>
+        <result column="bpm_status" property="bpmStatus"/>
+        <result column="delete_flag" property="deleteFlag"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		ysmc,
+		ysbm,
+		year,
+		jbbm,
+		jbbmbm,
+		jf_type,
+		bpm_status,
+		delete_flag
+	</sql>
+
+    <select id="selectPageVo" resultType="com.gzxn.ebp.ebp_jfly.dto.EbpJflyDto">
+		SELECT ebp_jfly.*,d.id did,d.name dname,d.code dcode FROM ebp_jfly
+		LEFT JOIN department d ON ebp_jfly.jbbm = d.id
+		${ew.customSqlSegment}
+	</select>
+
+    <select id="selectDepartmentById" resultType="com.gzxn.ebp.system.entity.Department">
+		SELECT * FROM department d where id = #{id}
+	</select>
+
+</mapper>

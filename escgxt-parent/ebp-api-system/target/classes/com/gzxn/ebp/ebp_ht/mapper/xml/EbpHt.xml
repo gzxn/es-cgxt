@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_ht.mapper.EbpHtMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_ht.entity.EbpHt">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="htbh" property="htbh" />
+		<result column="htmc" property="htmc" />
+		<result column="cgjg" property="cgjg" />
+		<result column="htje" property="htje" />
+		<result column="cjgys" property="cjgys" />
+		<result column="gyslxdh" property="gyslxdh" />
+		<result column="gyslxr" property="gyslxr" />
+		<result column="jgid" property="jgid" />
+		<result column="htlx" property="htlx" />
+		<result column="zbj" property="zbj" />
+		<result column="zbsj" property="zbsj" />
+		<result column="scsmj" property="scsmj" />
+		<result column="bf" property="bf" />
+		<result column="jflxfs" property="jflxfs" />
+		<result column="jflxr" property="jflxr" />
+		<result column="bflxrfs" property="bflxrfs" />
+		<result column="bflxr" property="bflxr" />
+		<result column="jfht" property="jfht" />
+		<result column="lsclryhm" property="lsclryhm" />
+		<result column="dqjdid" property="dqjdid" />
+		<result column="content" property="content" />
+		<result column="jfly" property="jfly" />
+		<result column="xmfzr" property="xmfzr" />
+		<result column="xmfzrdh" property="xmfzrdh" />
+		<result column="xmfzrid" property="xmfzrid" />
+		<result column="xmfzrbmbh" property="xmfzrbmbh" />
+		<result column="xmfzrbm" property="xmfzrbm" />
+		<result column="gysid" property="gysid" />
+		<result column="ht_username" property="htUsername" />
+		<result column="ht_user" property="htUser" />
+		<result column="zhonggao_date" property="zhonggaoDate" />
+		<result column="is_zbj" property="isZbj" />
+		<result column="gkglbm" property="gkglbm" />
+		<result column="gkglbmbh" property="gkglbmbh" />
+		<result column="audit_date" property="auditDate" />
+		<result column="is_gd" property="isGd" />
+		<result column="is_fk" property="isFk" />
+		<result column="zyr" property="zyr" />
+		<result column="is_yy" property="isYy" />
+		<result column="yy_time" property="yyTime" />
+		<result column="zyr_yhm" property="zyrYhm" />
+		<result column="cglx" property="cglx" />
+		<result column="jjyz" property="jjyz" />
+		<result column="xmlx" property="xmlx" />
+		<result column="htjk" property="htjk" />
+		<result column="yycs" property="yycs" />
+		<result column="gd_sjqr" property="gdSjqr" />
+		<result column="contract_type" property="contractType" />
+		<result column="kyfx" property="kyfx" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		htbh,
+		htmc,
+		cgjg,
+		htje,
+		cjgys,
+		gyslxdh,
+		gyslxr,
+		jgid,
+		htlx,
+		zbj,
+		zbsj,
+		scsmj,
+		bf,
+		jflxfs,
+		jflxr,
+		bflxrfs,
+		bflxr,
+		jfht,
+		lsclryhm,
+		dqjdid,
+		content,
+		jfly,
+		xmfzr,
+		xmfzrdh,
+		xmfzrid,
+		xmfzrbmbh,
+		xmfzrbm,
+		gysid,
+		ht_username,
+		ht_user,
+		zhonggao_date,
+		is_zbj,
+		gkglbm,
+		gkglbmbh,
+		audit_date,
+		is_gd,
+		is_fk,
+		zyr,
+		is_yy,
+		yy_time,
+		zyr_yhm,
+		cglx,
+		jjyz,
+		xmlx,
+		htjk,
+		yycs,
+		gd_sjqr,
+		contract_type,
+		kyfx,
+		delete_flag
+	</sql>
+
+	<select id="selectDngPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT ebp_cgsq.* FROM ebp_cgsq
+		LEFT JOIN ebp_cgsq_qd ON ebp_cgsq.id = ebp_cgsq_qd.cgsqid
+		LEFT JOIN ebp_zbjg ON ebp_cgsq_qd.id = ebp_zbjg.sbid
+		LEFT JOIN ebp_ysd ON ebp_zbjg.id = ebp_ysd.zbjg_id
+		LEFT JOIN ebp_ht ON ebp_ht.jgid = ebp_zbjg.id
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectWtjPageVo" resultType="com.gzxn.ebp.ebp_ht.entity.EbpHt">
+		SELECT * FROM (SELECT * FROM ebp_ht WHERE bpm_status = '1') ht
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectYtjPageVo" resultType="com.gzxn.ebp.ebp_ht.entity.EbpHt">
+		SELECT * FROM (SELECT * FROM ebp_ht WHERE bpm_status not in ('1')) ht
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectWshPageVo" resultType="com.gzxn.ebp.ebp_ht.entity.EbpHt">
+		SELECT * FROM (SELECT * FROM ebp_ht WHERE 1=1
+		and bpm_status in ('2')
+		and dqjdid is not null)
+		ht
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectYshPageVo" resultType="com.gzxn.ebp.ebp_ht.entity.EbpHt">
+		SELECT * FROM ebp_ht
+		${ew.customSqlSegment}
+	</select>
+
+
+</mapper>
+
+<!--
+<select id="selectYshPageVo" resultType="com.gzxn.ebp.ebp_ht.entity.EbpHt">
+		SELECT * FROM (SELECT * FROM ebp_ht WHERE bpm_status not in ('1','4')) ht
+		${ew.customSqlSegment}
+</select>
+-->

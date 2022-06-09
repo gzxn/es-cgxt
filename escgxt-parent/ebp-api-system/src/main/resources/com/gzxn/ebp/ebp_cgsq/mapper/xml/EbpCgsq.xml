@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_cgsq.mapper.EbpCgsqMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="cgbh" property="cgbh" />
+		<result column="xmmc" property="xmmc" />
+		<result column="sbbmbh" property="sbbmbh" />
+		<result column="sbbm" property="sbbm" />
+		<result column="sbbm_id" property="sbbmId" />
+		<result column="ysje" property="ysje" />
+		<result column="xmlx" property="xmlx" />
+		<result column="xmfzryhm" property="xmfzryhm" />
+		<result column="xmfzr" property="xmfzr" />
+		<result column="lxr" property="lxr" />
+		<result column="lxryhm" property="lxryhm" />
+		<result column="lxrdh" property="lxrdh" />
+		<result column="sbrq" property="sbrq" />
+		<result column="xmzt" property="xmzt" />
+		<result column="bpm_status" property="bpmStatus" />
+		<result column="cgsq_tblx" property="cgsqTblx" />
+		<result column="zzxs" property="zzxs" />
+		<result column="cgfs" property="cgfs" />
+		<result column="jfly_id" property="jflyId" />
+		<result column="nsqcgfs" property="nsqcgfs" />
+		<result column="cglx_type" property="cglxType" />
+		<result column="cgsq_type" property="cgsqType" />
+		<result column="dqjd" property="dqjd" />
+		<result column="dqclr" property="dqclr" />
+		<result column="dqclryhm" property="dqclryhm" />
+		<result column="cgzxr" property="cgzxr" />
+		<result column="is_zx" property="isZx" />
+		<result column="is_bg" property="isBg" />
+		<result column="is_package" property="isPackage" />
+		<result column="jycgfs" property="jycgfs" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		cgbh,
+		xmmc,
+		sbbmbh,
+		sbbm,
+		sbbm_id,
+		ysje,
+		xmlx,
+		xmfzryhm,
+		xmfzr,
+		lxr,
+		lxryhm,
+		lxrdh,
+		sbrq,
+		xmzt,
+		bpm_status,
+		cgsq_tblx,
+		zzxs,
+		cgfs,
+		jfly_id,
+		nsqcgfs,
+		cglx_type,
+		cgsq_type,
+		dqjd,
+		dqclr,
+		dqclryhm,
+		cgzxr,
+		is_zx,
+		is_bg,
+		is_package,
+		jycgfs,
+		delete_flag
+	</sql>
+
+	<select id="selectPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT * FROM ebp_cgsq
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectWtjPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT * FROM (SELECT * FROM ebp_cgsq WHERE bpm_status = '1') cgsq
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectYtjPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT * FROM (SELECT * FROM ebp_cgsq WHERE bpm_status not in ('1')) cgsq
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectWshPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT * FROM (SELECT * FROM ebp_cgsq WHERE 1=1
+		and bpm_status in ('2')
+		and dqjd is not null)
+		cgsq
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectYshPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT * FROM ebp_cgsq
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="selectYshtgPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT * FROM (SELECT * FROM ebp_cgsq WHERE bpm_status  in ('5')) cgsq
+		left join ebp_cgrw on cgsq.id = ebp_cgrw.cgsqid
+		${ew.customSqlSegment}
+	</select>
+
+</mapper>
+<!--
+<select id="selectYshPageVo" resultType="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsq">
+		SELECT cgsq.* FROM (SELECT * FROM ebp_cgsq WHERE bpm_status not in ('1','4')) cgsq
+		LEFT JOIN lcb ON cgsq.id = lcb.bdid
+		${ew.customSqlSegment}
+</select>
+-->

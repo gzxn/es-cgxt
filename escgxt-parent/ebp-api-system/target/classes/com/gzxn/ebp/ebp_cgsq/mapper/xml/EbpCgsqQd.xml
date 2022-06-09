@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_cgsq.mapper.EbpCgsqQdMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_cgsq.entity.EbpCgsqQd">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="cgsqid" property="cgsqid" />
+		<result column="hwbh" property="hwbh" />
+		<result column="mc" property="mc" />
+		<result column="pmmc" property="pmmc" />
+		<result column="pmbm" property="pmbm" />
+		<result column="sl" property="sl" />
+		<result column="dw" property="dw" />
+		<result column="dj" property="dj" />
+		<result column="je" property="je" />
+		<result column="ggxh" property="ggxh" />
+		<result column="cssm" property="cssm" />
+		<result column="sbr" property="sbr" />
+		<result column="sbryhm" property="sbryhm" />
+		<result column="sbbm" property="sbbm" />
+		<result column="sbbmmm" property="sbbmmm" />
+		<result column="sbrq" property="sbrq" />
+		<result column="bz" property="bz" />
+		<result column="fj" property="fj" />
+		<result column="bpm_status" property="bpmStatus" />
+		<result column="zzxs" property="zzxs" />
+		<result column="cgfs" property="cgfs" />
+		<result column="jfly_id" property="jflyId" />
+		<result column="cjdj" property="cjdj" />
+		<result column="cjzj" property="cjzj" />
+		<result column="cgzxr" property="cgzxr" />
+		<result column="is_pack" property="isPack" />
+		<result column="is_task" property="isTask" />
+		<result column="is_djjg" property="isDjjg" />
+		<result column="is_jggs" property="isJggs" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		cgsqid,
+		hwbh,
+		mc,
+		pmmc,
+		pmbm,
+		sl,
+		dw,
+		dj,
+		je,
+		ggxh,
+		cssm,
+		sbr,
+		sbryhm,
+		sbbm,
+		sbbmmm,
+		sbrq,
+		bz,
+		fj,
+		bpm_status,
+		zzxs,
+		cgfs,
+		jfly_id,
+		cjdj,
+		cjzj,
+		cgzxr,
+		is_pack,
+		is_task,
+		is_djjg,
+		is_jggs,
+		delete_flag
+	</sql>
+
+</mapper>

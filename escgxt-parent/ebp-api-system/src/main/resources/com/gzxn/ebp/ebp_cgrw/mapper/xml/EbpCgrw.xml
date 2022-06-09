@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_cgrw.mapper.EbpCgrwMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_cgrw.entity.EbpCgrw">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="cgrwbh" property="cgrwbh" />
+		<result column="cgrwmc" property="cgrwmc" />
+		<result column="zzxs" property="zzxs" />
+		<result column="cgfs" property="cgfs" />
+		<result column="ysje" property="ysje" />
+		<result column="dljgid" property="dljgid" />
+		<result column="dljgbh" property="dljgbh" />
+		<result column="dljgmc" property="dljgmc" />
+		<result column="zxbm" property="zxbm" />
+		<result column="cgzxryhm" property="cgzxryhm" />
+		<result column="cgzxr" property="cgzxr" />
+		<result column="sbrq" property="sbrq" />
+		<result column="is_djjg" property="isDjjg" />
+		<result column="cqfs" property="cqfs" />
+		<result column="xmlx" property="xmlx" />
+		<result column="bz" property="bz" />
+		<result column="bpm_status" property="bpmStatus" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		cgrwbh,
+		cgrwmc,
+		zzxs,
+		cgfs,
+		ysje,
+		dljgid,
+		dljgbh,
+		dljgmc,
+		zxbm,
+		cgzxryhm,
+		cgzxr,
+		sbrq,
+		is_djjg,
+		cqfs,
+		xmlx,
+		bz,
+		bpm_status,
+		delete_flag
+	</sql>
+
+	<select id="selectYfpPageVo" resultType="com.gzxn.ebp.ebp_cgrw.entity.EbpCgrw">
+		SELECT ebp_cgrw.* FROM ebp_cgrw
+		LEFT JOIN ebp_cgsq ON ebp_cgrw.cgsqid = ebp_cgsq.id
+		${ew.customSqlSegment}
+
+	</select>
+
+	<select id="selectYfpWdbPageVo" resultType="com.gzxn.ebp.ebp_cgrw.entity.EbpCgrw">
+		SELECT ebp_cgrw.* FROM ebp_cgrw
+		LEFT JOIN ebp_cgb ON ebp_cgrw.id = ebp_cgb.cgrwid
+		LEFT JOIN ebp_cgsq ON ebp_cgrw.cgsqid = ebp_cgsq.id
+		${ew.customSqlSegment}
+
+	</select>
+<!--	SELECT * FROM ebp_cgrw WHERE 1=1-->
+<!--	and id not in (SELECT cgrwid FROM ebp_cgb)-->
+<!--	and cgrwbh like #{cgrwbh}-->
+<!--	and cgrwmc like #{cgrwmc}-->
+
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ebp-api-system" />
+        <module name="ebp-config" />
+        <module name="ebp-core" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ebp-api-system" target="1.8" />
+      <module name="ebp-config" target="1.8" />
+      <module name="ebp-core" target="1.8" />
+      <module name="escgxt-parent" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ebp-api-system" options="-parameters" />
+      <module name="ebp-config" options="-parameters" />
+      <module name="ebp-core" options="-parameters" />
+      <module name="escgxt-parent" options="" />
+    </option>
+  </component>
+</project>

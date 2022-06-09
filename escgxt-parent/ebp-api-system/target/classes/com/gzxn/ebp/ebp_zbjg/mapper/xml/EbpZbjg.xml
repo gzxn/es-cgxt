@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_zbjg.mapper.EbpZbjgMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_zbjg.entity.EbpZbjg">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="cgjg" property="cgjg" />
+		<result column="jgbh" property="jgbh" />
+		<result column="xmmc" property="xmmc" />
+		<result column="cjgys" property="cjgys" />
+		<result column="cjjg" property="cjjg" />
+		<result column="gyslxdh" property="gyslxdh" />
+		<result column="gyslxr" property="gyslxr" />
+		<result column="cjrq" property="cjrq" />
+		<result column="djsj" property="djsj" />
+		<result column="zbjgtzs" property="zbjgtzs" />
+		<result column="jglx" property="jglx" />
+		<result column="zbid" property="zbid" />
+		<result column="sbid" property="sbid" />
+		<result column="cgbid" property="cgbid" />
+		<result column="gysid" property="gysid" />
+		<result column="cgrwid" property="cgrwid" />
+		<result column="confirm_result" property="confirmResult" />
+		<result column="is_confirm" property="isConfirm" />
+		<result column="cgfs" property="cgfs" />
+		<result column="cg_status" property="cgStatus" />
+		<result column="ht_userdh" property="htUserdh" />
+		<result column="is_qdht" property="isQdht" />
+		<result column="tbdw" property="tbdw" />
+		<result column="is_dh" property="isDh" />
+		<result column="is_apply" property="isApply" />
+		<result column="is_djys" property="isDjys" />
+		<result column="is_fk" property="isFk" />
+		<result column="is_submit" property="isSubmit" />
+		<result column="is_wcdj" property="isWcdj" />
+		<result column="is_ys_confirm" property="isYsConfirm" />
+		<result column="ys_user_name" property="ysUserName" />
+		<result column="ys_user_code" property="ysUserCode" />
+		<result column="ys_user_phone" property="ysUserPhone" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		cgjg,
+		jgbh,
+		xmmc,
+		cjgys,
+		cjjg,
+		gyslxdh,
+		gyslxr,
+		cjrq,
+		djsj,
+		zbjgtzs,
+		jglx,
+		zbid,
+		sbid,
+		cgbid,
+		gysid,
+		cgrwid,
+		confirm_result,
+		is_confirm,
+		cgfs,
+		cg_status,
+		ht_userdh,
+		is_qdht,
+		tbdw,
+		is_dh,
+		is_apply,
+		is_djys,
+		is_fk,
+		is_submit,
+		is_wcdj,
+		is_ys_confirm,
+		ys_user_name,
+		ys_user_code,
+		ys_user_phone,
+		delete_flag
+	</sql>
+
+	<select id="selectYdjPageVo" resultType="com.gzxn.ebp.ebp_zbjg.entity.EbpZbjg">
+		SELECT ebp_zbjg.* FROM ebp_zbjg
+		LEFT JOIN ebp_ysd ON ebp_zbjg.id = ebp_ysd.zbjg_id
+		${ew.customSqlSegment}
+	</select>
+
+</mapper>

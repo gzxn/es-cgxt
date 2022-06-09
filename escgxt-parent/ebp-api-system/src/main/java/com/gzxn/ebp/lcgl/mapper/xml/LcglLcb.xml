@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.lcgl.mapper.LcglLcbMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.lcgl.entity.LcglLcb">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="xqurl" property="xqurl" />
+		<result column="lcmc" property="lcmc" />
+		<result column="ms" property="ms" />
+		<result column="ysjzj" property="ysjzj" />
+		<result column="ssbm" property="ssbm" />
+		<result column="sfsxqm" property="sfsxqm" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		xqurl,
+		lcmc,
+		ms,
+		ysjzj,
+		ssbm,
+		sfsxqm,
+		delete_flag
+	</sql>
+
+</mapper>

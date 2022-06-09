@@ -1,0 +1,59 @@
+server:
+  port: 8885
+  servlet:
+    context-path: /EBP-Api
+  compression:
+    enabled: true  # 开启响应压缩
+    mime-types:  # 支持的压缩类型
+      - application/json
+      - application/xml
+      - application/javascript
+      - text/html
+      - text/xml
+      - text/plain
+      - text/css
+      - text/javascript
+    min-response-size: 2048
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/escgxt?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    validationQuery: select 1
+  redis:
+    database: 0
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    timeout: 0
+    lettuce:
+      pool:
+        max-active: 10   #最大连接数据库连接数,设 0 为没有限制
+        max-idle: 8     #最大空闲连接中的数量,设 0 为没有限制
+        max-wait: -1ms  #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        min-idle: 1     #最小空闲连接中的数量,设 0 为没有限制
+mybatis:
+  mapperLocations: classpath:com/gzxn/ebp/*/mapper/xml/*.xml
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: true
+  mapper-locations: classpath:com/gzxn/ebp/*/mapper/xml/*.xml
+  typeAliasesPackage: com.gzxn.ebp.*.entity
+  global-config:
+    db-config:
+      id-type: UUID
+      field-strategy: NOT_EMPTY
+      db-type: MYSQL
+jwt:
+  secret: gzxn
+#  duration: 7200000
+  duration: 21600000
+#  flush: 1800000
+  flush: 3600000
+resource:
+  mappers:
+    - uri: statis
+      file: statis

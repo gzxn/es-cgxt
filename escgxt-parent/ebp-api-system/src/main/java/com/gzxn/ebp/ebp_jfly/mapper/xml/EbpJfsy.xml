@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_jfly.mapper.EbpJfsyMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_jfly.entity.EbpJfsy">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="cgsqid" property="cgsqid" />
+		<result column="jflyid" property="jflyid" />
+		<result column="syje" property="syje" />
+		<result column="ysbm" property="ysbm" />
+		<result column="ysmc" property="ysmc" />
+		<result column="jf_type" property="jfType" />
+		<result column="is_ndysnzj" property="isNdysnzj" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		cgsqid,
+		jflyid,
+		syje,
+		ysbm,
+		ysmc,
+		jf_type,
+		is_ndysnzj,
+		delete_flag
+	</sql>
+
+</mapper>

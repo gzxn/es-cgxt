@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.lcgl.mapper.LcglJdbMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.lcgl.entity.LcglJdb">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="jyclsj" property="jyclsj" />
+		<result column="bxsftg" property="bxsftg" />
+		<result column="dlrjt" property="dlrjt" />
+		<result column="dqrw" property="dqrw" />
+		<result column="clr" property="clr" />
+		<result column="clryhm" property="clryhm" />
+		<result column="sfksjsjd" property="sfksjsjd" />
+		<result column="clfs" property="clfs" />
+		<result column="ssbm" property="ssbm" />
+		<result column="jdmc" property="jdmc" />
+		<result column="lcid" property="lcid" />
+		<result column="bdzj" property="bdzj" />
+		<result column="lcslid" property="lcslid" />
+		<result column="sxh" property="sxh" />
+		<result column="sfhq" property="sfhq" />
+		<result column="zxjdjt" property="zxjdjt" />
+		<result column="tgyshr" property="tgyshr" />
+		<result column="tjbds" property="tjbds" />
+		<result column="jdbm" property="jdbm" />
+		<result column="sfbgjd" property="sfbgjd" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		jyclsj,
+		bxsftg,
+		dlrjt,
+		dqrw,
+		clr,
+		clryhm,
+		sfksjsjd,
+		clfs,
+		ssbm,
+		jdmc,
+		lcid,
+		bdzj,
+		lcslid,
+		sxh,
+		sfhq,
+		zxjdjt,
+		tgyshr,
+		tjbds,
+		jdbm,
+		sfbgjd,
+		delete_flag
+	</sql>
+
+</mapper>

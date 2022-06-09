@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxn.ebp.ebp_zbxm.mapper.EbpZbxmQdMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxn.ebp.ebp_zbxm.entity.EbpZbxmQd">
+		<result column="crer" property="crer" />
+		<result column="crtm" property="crtm" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="cgbid" property="cgbid" />
+		<result column="cgbbh" property="cgbbh" />
+		<result column="cgbmc" property="cgbmc" />
+		<result column="zbxmid" property="zbxmid" />
+		<result column="zbxmbh" property="zbxmbh" />
+		<result column="zbxmmc" property="zbxmmc" />
+		<result column="zzxs" property="zzxs" />
+		<result column="cgfs" property="cgfs" />
+		<result column="ysje" property="ysje" />
+		<result column="is_zbdj" property="isZbdj" />
+		<result column="manage_depart" property="manageDepart" />
+		<result column="sxh" property="sxh" />
+		<result column="delete_flag" property="deleteFlag" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		crtm,
+		mder,
+		mdtm,
+		id,
+		cgbid,
+		cgbbh,
+		cgbmc,
+		zbxmid,
+		zbxmbh,
+		zbxmmc,
+		zzxs,
+		cgfs,
+		ysje,
+		is_zbdj,
+		manage_depart,
+		sxh,
+		delete_flag
+	</sql>
+
+</mapper>
