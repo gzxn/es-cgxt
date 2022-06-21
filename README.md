@@ -34,15 +34,15 @@
 
 ## 2、项目演示图
 
-![1](https://github.com/gzxn/es-cgxt/tree/main/imgs/1.png)
+![1](https://raw.githubusercontent.com/gzxn/es-cgxt/main/imgs/1.png)
 
-![2](https://github.com/gzxn/es-cgxt/tree/main/imgs/2.png)
+![2](https://raw.githubusercontent.com/gzxn/es-cgxt/main/imgs/2.png)
 
-![3](https://github.com/gzxn/es-cgxt/tree/main/imgs/3.png)
+![3](https://raw.githubusercontent.com/gzxn/es-cgxt/main/imgs/3.png)
 
-![4](https://github.com/gzxn/es-cgxt/tree/main/imgs/4.png)
+![4](https://raw.githubusercontent.com/gzxn/es-cgxt/main/imgs/4.png)
 
-![5](https://github.com/gzxn/es-cgxt/tree/main/imgs/5.png)
+![5](https://raw.githubusercontent.com/gzxn/es-cgxt/main/imgs/5.png)
 
-![6](https://github.com/gzxn/es-cgxt/tree/main/imgs/6.png)
+![6](https://raw.githubusercontent.com/gzxn/es-cgxt/main/imgs/6.png)
 
